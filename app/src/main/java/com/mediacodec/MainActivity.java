@@ -31,7 +31,8 @@ import com.mediacodec.R;
 public class MainActivity extends Activity {
 
     ImageView dataImageViewer;
-    private String[] filename = {"/sdcard/Download/h264_sample/h264_1920_1080.h264","/sdcard/Download/h264_sample/h265_1920_1080.h265"};
+    //private String[] filename = {"/sdcard/Download/h264_sample/h264_1920_1080.h264","/sdcard/Download/h264_sample/h265_1920_1080.h265"};
+    private String[] filename = {"/data/data/h264_sample/h264_1920_1080.h264","/data/data/h264_sample/h265_1920_1080.h265"};
     private final String filePath = filename[0];
     private int MediaCodecWidth = 1920;
     private int MediaCodecHeight = 1080;

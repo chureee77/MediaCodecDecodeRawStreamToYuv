@@ -40,13 +40,13 @@ public class MyActivity extends Activity implements SurfaceHolder.Callback {
 
     private String[] filename = {"/sdcard/Download/h264_sample/h264_1920_1080.h264", "/sdcard/Download/h264_sample/h265_1920_1080.h265"};
 
-    private final String filePath = filename[1];
+    private final String filePath = filename[0];
     private int MediaCodecWidth = 1920;
     private int MediaCodecHeight = 1080;
 
     //h264 or h265 decode
-    private h265Decoder mPlayer = null;
-    //    private h264Decoder mPlayer = null;
+    //private h265Decoder mPlayer = null;
+    private h264Decoder mPlayer = null;
     Handler handler = null;
 
     public static ArrayList<Frame> frames = null;
@@ -141,7 +141,8 @@ public class MyActivity extends Activity implements SurfaceHolder.Callback {
 //            Toast.makeText(getApplicationContext(),
 //                    "in surfaceChanged. creating playerthread",
 //                    Toast.LENGTH_SHORT).show();
-            mPlayer = new h265Decoder(holder.getSurface());
+            //mPlayer = new h265Decoder(holder.getSurface());
+            mPlayer = new h264Decoder(holder.getSurface());
             mPlayer.start();
         }
     }
@@ -177,7 +178,7 @@ public class MyActivity extends Activity implements SurfaceHolder.Callback {
                     "video/avc", MediaCodecWidth, MediaCodecHeight);
 
 
-            Log.e("testCodec", "header_sps.length=" + header_sps.length + ",header_pps len=" + header_pps.length);
+            Log.e("testCodec", "hheader_sps.length=" + header_sps.length + ",header_pps len=" + header_pps.length);
 
 
             mediaFormat.setByteBuffer("csd-0", ByteBuffer.wrap(header_sps));
